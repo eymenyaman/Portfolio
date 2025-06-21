@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<main class="main">
+
+    @await Component.InvokeAsync("_SelectHeroViewComponentPartial")
+
+    @await Component.InvokeAsync("_SelectAboutViewComponentPartial")
+
+    @await Component.InvokeAsync("_SelectSkillViewComponentPartial")
+
+    @await Component.InvokeAsync("_SelectResumeViewComponentPartial")
+
+    @await Component.InvokeAsync("_SelectPortfolioViewComponentPartial")
+
+    @await Component.InvokeAsync("_SelectServiceViewComponentPartial")
+
+    @await Component.InvokeAsync("_SelectTestimonialViewComponentPartial")
+
+    @await Component.InvokeAsync("_SelectContactViewComponentPartial")
+
+</main>
