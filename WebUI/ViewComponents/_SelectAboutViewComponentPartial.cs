@@ -1,12 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BLL.Service;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.ViewComponents
 {
     public class _SelectAboutViewComponentPartial:ViewComponent
     {
+        private readonly AboutService aboutService;
+
+        public _SelectAboutViewComponentPartial()
+        {
+            aboutService = new AboutService();
+        }
         public IViewComponentResult Invoke()
         {
-            return View();
+            var about = aboutService.GetAbout();
+            return View(about);
         }
     }
 }
