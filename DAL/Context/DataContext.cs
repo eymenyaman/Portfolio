@@ -18,5 +18,6 @@ namespace DAL.Context
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<SocialMedia> SocialMedia { get; set; }
         public DbSet<About> Abouts { get; set; }
+        public DbSet<Skill> Skills { get; set; }
     }
 }
