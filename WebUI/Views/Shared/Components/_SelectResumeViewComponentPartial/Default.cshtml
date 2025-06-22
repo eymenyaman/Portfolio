@@ -1,4 +1,6 @@
-﻿<!-- Resume Section -->
+﻿@model List<Education>
+
+<!-- Resume Section -->
 <section id="resume" class="resume section">
 
     <!-- Section Title -->
@@ -24,20 +26,21 @@
                     </ul>
                 </div><!-- Edn Resume Item -->
 
-                <h3 class="resume-title">Education</h3>
-                <div class="resume-item">
-                    <h4>Master of Fine Arts &amp; Graphic Design</h4>
-                    <h5>2015 - 2016</h5>
-                    <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                    <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
-                </div><!-- Edn Resume Item -->
+                <h3 class="resume-title">Eğitim</h3>
+                @foreach (var item in Model)
+                {
+                    <div class="resume-item">
+                        <h4>@item.SchoolName</h4>
+                        <h5>@item.StartDate.Year - @item.EndDate.Year</h5>
+                        <p><em>@item.Degree</em></p>
+                        <p>@item.Text</p>
+                    </div>
 
-                <div class="resume-item">
-                    <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-                    <h5>2010 - 2014</h5>
-                    <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                    <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
-                </div><!-- Edn Resume Item -->
+                    <!-- Edn Resume Item -->
+                }
+
+
+
 
             </div>
 
