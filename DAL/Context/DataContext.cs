@@ -22,5 +22,9 @@ namespace DAL.Context
         public DbSet<Education> Educations { get; set; }
         public DbSet<Experience> Experiences { get; set; }
         public DbSet<Portfolio> Portfolios { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<ServiceDetails> ServiceDetails { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }
