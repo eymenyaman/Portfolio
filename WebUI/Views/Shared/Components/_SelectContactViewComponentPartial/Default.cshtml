@@ -28,7 +28,7 @@
                         <i class="bi bi-telephone flex-shrink-0"></i>
                         <div>
                             <h3>Call Us</h3>
-                            <p>+9@Model.Phone</p>
+                            <p>@("+9" + Model.Phone)</p>
                         </div>
                     </div><!-- End Info Item -->
 
@@ -45,27 +45,27 @@
             </div>
 
             <div class="col-lg-7">
-                <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                <form action="/Home/EmailGonder" method="post" class="php-email-form">
                     <div class="row gy-4">
 
                         <div class="col-md-6">
-                            <label for="name-field" class="pb-2">Your Name</label>
-                            <input type="text" name="name" id="name-field" class="form-control" required="">
+                            <label for="name-field" class="pb-2">Adınız</label>
+                            <input type="text" name="NameSurname" id="name-field" class="form-control" required="">
                         </div>
 
                         <div class="col-md-6">
-                            <label for="email-field" class="pb-2">Your Email</label>
-                            <input type="email" class="form-control" name="email" id="email-field" required="">
+                            <label for="email-field" class="pb-2">Email</label>
+                            <input type="email" class="form-control" name="Email" id="email-field" required="">
                         </div>
 
                         <div class="col-md-12">
-                            <label for="subject-field" class="pb-2">Subject</label>
-                            <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                            <label for="subject-field" class="pb-2">Konu</label>
+                            <input type="text" class="form-control" name="Subject" id="subject-field" required="">
                         </div>
 
                         <div class="col-md-12">
-                            <label for="message-field" class="pb-2">Message</label>
-                            <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                            <label for="message-field" class="pb-2">Mesaj</label>
+                            <textarea class="form-control" name="Message" rows="10" id="message-field" required=""></textarea>
                         </div>
 
                         <div class="col-md-12 text-center">
@@ -73,7 +73,7 @@
                             <div class="error-message"></div>
                             <div class="sent-message">Your message has been sent. Thank you!</div>
 
-                            <button type="submit">Send Message</button>
+                            <button type="submit">Email Gonder</button>
                         </div>
 
                     </div>
