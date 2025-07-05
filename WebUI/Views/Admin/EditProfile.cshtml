@@ -1,0 +1,81 @@
+﻿@model Profile
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<main class="app-main">
+    <!--begin::App Content Header--> <div class="app-content-header">
+        <!--begin::Container--> <div class="container-fluid">
+            <!--begin::Row--> <div class="row">
+                <div class="col-sm-6"> <h3 class="mb-0">Dashboard</h3> </div> <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-end">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Dashboard
+                        </li>
+                    </ol>
+                </div>
+            </div> <!--end::Row-->
+        </div> <!--end::Container-->
+    </div> <!--end::App Content Header--> <!--begin::App Content-->
+    <div class="app-content">
+        <!--begin::Container-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <div class="card card-primary card-outline mb-4">
+                        <!--begin::Header--> <div class="card-header">
+                            <div class="card-title">Profil Güncelle</div>
+                        </div> <!--end::Header-->
+                        <!--begin::Form-->
+                        <form asp-action="EditProfile" asp-controller="Admin" method="post" enctype="multipart/form-data">
+                            <!--begin::Body-->
+                            <input type="hidden" name="ProfileImage" value="@Model.ProfileImage" />
+                            <input type="hidden" name="BackgroundImage" value="@Model.BackgroundImage" />
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Adınız:</label>
+                                    <input asp-for="Name" class="form-control">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Soyadınız:</label>
+                                    <input asp-for="Surname" class="form-control">
+                                    <span asp-validation-for="Surname" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Ünvanınız:</label>
+                                    <input asp-for="Title" class="form-control">
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <img src="~/../assets/img/@Model.ProfileImage" width="90" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Profil Resminiz:</label>
+                                    <input type="file" name="newProfileImage" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <img src="~/../assets/img/@Model.BackgroundImage" width="90" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Arkaplan Resminiz:</label>
+                                    <input type="file" name="newBackgroundImage" class="form-control">
+                                </div>
+                               
+                            </div>
+                            <div class="card-footer text-center">
+                                <button type="submit" class="btn btn-outline-success">Güncelle</button>
+                            </div>
+                        </form> <!--end::Form-->
+                    </div>
+                </div>
+            </div>
+
+
+            <!--begin::Row-->
+
+        </div> <!--end::Container-->
+    </div> <!--end::App Content-->
+</main> <!--end::App Main-->

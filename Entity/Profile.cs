@@ -1,8 +1,13 @@
-﻿namespace Entity
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Entity
 {
     public class Profile
     {
         public int Id { get; set; }
+
+        [Required(ErrorMessage ="İsim alanı boş geçilmez")]
+        [MaxLength(10)]
         public string Name { get; set; }
         public string Surname { get; set; }
         public string ProfileImage { get; set; }

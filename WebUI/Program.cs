@@ -19,6 +19,8 @@ namespace WebUI
                 app.UseHsts();
             }
 
+         
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -28,7 +30,7 @@ namespace WebUI
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Admin}/{action=EditProfile}/{id?}");
 
             app.Run();
         }
