@@ -21,5 +21,10 @@ namespace BLL.Service
         {
             return await profileDal.GetProfileAsync();
         }
+
+        public async Task UpdateProfileAsync(Profile profile)
+        {
+            profileDal.UpdateProfileAsync(profile);
+        }
     }
 }

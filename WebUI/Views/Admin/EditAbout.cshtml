@@ -1,0 +1,111 @@
+﻿@model Entity.About
+
+@{
+    ViewData["Title"] = "EditAbout";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .form-group{
+        margin-top:1rem;
+    }
+</style>
+
+<main class="app-main">
+    <!--begin::App Content Header--> <div class="app-content-header">
+        <!--begin::Container--> <div class="container-fluid">
+            <!--begin::Row--> <div class="row">
+                <div class="col-sm-6"> <h3 class="mb-0">Dashboard</h3> </div> <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-end">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Dashboard
+                        </li>
+                    </ol>
+                </div>
+            </div> <!--end::Row-->
+        </div> <!--end::Container-->
+    </div> <!--end::App Content Header--> <!--begin::App Content-->
+    <div class="app-content">
+        <!--begin::Container-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 offset-4">
+                    <form asp-action="EditAbout" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label asp-for="Text" class="control-label"></label>
+                            <textarea asp-for="Text" class="form-control" rows="10" cols="10">@Model.Text</textarea>
+                            <span asp-validation-for="Text" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <img src="~/../assets/img/@Model.ImageUrl" width="90"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="ImageUrl" class="control-label"></label>
+                            <input type="file" name="file" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Title" class="control-label"></label>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Coverletter" class="control-label"></label>
+                            <textarea asp-for="Coverletter" class="form-control">@Model.Coverletter</textarea>
+                            <span asp-validation-for="Coverletter" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="BirthDate" class="control-label"></label>
+                            <input asp-for="BirthDate" class="form-control" />
+                            <span asp-validation-for="BirthDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Website" class="control-label"></label>
+                            <input asp-for="Website" class="form-control" />
+                            <span asp-validation-for="Website" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Phone" class="control-label"></label>
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="City" class="control-label"></label>
+                            <input asp-for="City" class="form-control" />
+                            <span asp-validation-for="City" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Age" class="control-label"></label>
+                            <input asp-for="Age" class="form-control" />
+                            <span asp-validation-for="Age" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Degree" class="control-label"></label>
+                            <input asp-for="Degree" class="form-control" />
+                            <span asp-validation-for="Degree" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Freelance" class="control-label"></label>
+                            <input asp-for="Freelance" class="form-control" />
+                            <span asp-validation-for="Freelance" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Güncelle" class="btn btn-outline-success" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!--begin::Row-->
+
+        </div> <!--end::Container-->
+    </div> <!--end::App Content-->
+</main> <!--end::App Main-->

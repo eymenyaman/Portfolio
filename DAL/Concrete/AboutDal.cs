@@ -21,5 +21,10 @@ namespace DAL.Concrete
         {
             return _context.Abouts.FirstOrDefault();
         }
+
+        public async Task UpdateAboutAsync(About about)
+        {
+            await _context.SaveChangesAsync();
+        }
     }
 }

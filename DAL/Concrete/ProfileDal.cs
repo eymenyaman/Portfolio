@@ -22,5 +22,10 @@ namespace DAL.Concrete
         {
             return await context.Profiles.Include(i=> i.SocialMedias).FirstOrDefaultAsync();
         }
+
+        public async Task UpdateProfileAsync(Profile profile)
+        {
+            await context.SaveChangesAsync();
+        }
     }
 }

@@ -20,5 +20,10 @@ namespace BLL.Service
         {
             return aboutDal.GetAbout();
         }
+
+        public async Task UpdateAboutAsync(About about)
+        {
+            await aboutDal.UpdateAboutAsync(about);
+        }
     }
 }
