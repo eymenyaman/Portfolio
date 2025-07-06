@@ -23,6 +23,13 @@ namespace DAL.Concrete
         {
             return context.Experiences.ToList();
         }
-
+        public async Task UpdateExperinceAsync(List<Experience> experiences)
+        {
+            foreach (var experience in experiences)
+            {
+                context.Experiences.Update(experience); 
+                await context.SaveChangesAsync();
+            }
+        }
     }
 }

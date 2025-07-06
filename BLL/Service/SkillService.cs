@@ -19,6 +19,15 @@ namespace BLL.Service
         public List<Skill> GetSkill()
         {
             return skillDal.GetSkill();
+
+        }
+        public Skill SkillUpdate()
+        {
+            return skillDal.SkillUpdate();
+        }
+        public async Task UpdateSkillAsync(List<Skill> skill)
+        {
+            await skillDal.UpdateSkillAsync(skill);
         }
     }
 }

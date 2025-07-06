@@ -21,5 +21,9 @@ namespace BLL.Service
         {
             return educationDal.GetEducations();
         }
+        public async Task UpdateEducationAsync(List<Education> educations)
+        {
+            await educationDal.UpdateEducationAsync(educations);
+        }
     }
 }

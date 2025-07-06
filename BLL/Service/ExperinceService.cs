@@ -21,5 +21,9 @@ namespace BLL.Service
         {
             return experinceDal.GetExperinces();
         }
+        public async Task UpdateExperinceAsync(List<Experience> experiences)
+        {
+            await experinceDal.UpdateExperinceAsync(experiences);
+        }
     }
 }

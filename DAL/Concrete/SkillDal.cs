@@ -1,5 +1,6 @@
 ﻿using DAL.Context;
 using Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,18 @@ namespace DAL.Concrete
         public List<Skill> GetSkill()
         {
             return context.Skills.ToList();
+        }
+        public Skill SkillUpdate()
+        {
+            return context.Skills.FirstOrDefault();
+        }
+        public async Task UpdateSkillAsync(List<Skill> skills)
+        {
+            foreach (var skill in skills)
+            {
+             context.Skills.Update(skill); // veya _context.Entry(skill).State = EntityState.Modified;
+            }
+            await context.SaveChangesAsync(); // Bu olmalı
         }
     }
 }
