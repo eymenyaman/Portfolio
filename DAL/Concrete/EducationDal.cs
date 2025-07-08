@@ -25,9 +25,9 @@ namespace DAL.Concrete
         {
             foreach (var education in educations)
             {
-                context.Educations.Update(education); // veya _context.Entry(skill).State = EntityState.Modified;
+                context.Educations.Update(education); 
 
-                await context.SaveChangesAsync(); // Bu olmalı
+                await context.SaveChangesAsync(); 
             }
         }
     }
