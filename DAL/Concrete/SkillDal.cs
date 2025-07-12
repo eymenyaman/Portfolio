@@ -1,4 +1,4 @@
-﻿using DAL.Context;
+using DAL.Context;
 using Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -29,7 +29,7 @@ namespace DAL.Concrete
         {
             foreach (var skill in skills)
             {
-             context.Skills.Update(skill); // veya _context.Entry(skill).State = EntityState.Modified;
+             context.Skills.Update(skill); 
             }
             await context.SaveChangesAsync(); // Bu olmalı
         }
