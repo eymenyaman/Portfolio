@@ -31,7 +31,7 @@ namespace DAL.Concrete
             {
              context.Skills.Update(skill); 
             }
-            await context.SaveChangesAsync(); // Bu olmalı
+            await context.SaveChangesAsync(); 
         }
     }
 }
